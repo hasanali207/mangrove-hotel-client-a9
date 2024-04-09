@@ -1,0 +1,112 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Luxurious Villa with Ocean View",
+      "segment_name": "Hotels",
+      "description": "Experience luxury living with breathtaking ocean views. This villa features spacious living areas, modern kitchen, and a private swimming pool.",
+      "price": "$1,500,000",
+      "Status": "sale",
+      "Area": "4000 sq ft",
+      "location": "Malibu, California",
+      "facilities": ["living room", "swimming pool", "Kitchen"],
+      "image_url": "https://imgbb.host/images/HXzn2.jpeg"
+    },
+    {
+      "id": 2,
+      "estate_title": "Cozy Apartment in Downtown",
+      "segment_name": "motels",
+      "description": "Charming apartment located in the heart of the city. Close to shops, restaurants, and public transportation. Ideal for urban living.",
+      "price": "$2,500/month",
+      "Status": "rent",
+      "Area": "800 sq ft",
+      "location": "New York City, New York",
+      "facilities": ["living room", "Kitchen"],
+      "image_url": "https://imgbb.host/images/HXCWW.jpeg"
+    },
+    {
+      "id": 3,
+      "estate_title": "Modern Loft with City View",
+      "segment_name": "resorts",
+      "description": "Sleek and stylish loft offering panoramic city views. Features high ceilings, exposed brick walls, and contemporary design.",
+      "price": "$850,000",
+      "Status": "sale",
+      "Area": "1500 sq ft",
+      "location": "San Francisco, California",
+      "facilities": ["living room", "Kitchen"],
+      "image_url": "https://imgbb.host/images/HXyNn.jpeg"
+    },
+    {
+      "id": 4,
+      "estate_title": "Spacious Family Home",
+      "segment_name": "vacation rentals",
+      "description": "Perfect home for a growing family. This spacious property offers multiple bedrooms, large backyard, and a cozy fireplace.",
+      "price": "$400,000",
+      "Status": "sale",
+      "Area": "2500 sq ft",
+      "location": "Austin, Texas",
+      "facilities": ["living room", "Kitchen"],
+      "image_url": "https://imgbb.host/images/HXfat.jpeg"
+    },
+    {
+      "id": 5,
+      "estate_title": "Beachfront Condo with Resort Amenities",
+      "segment_name": "Resort",
+      "description": "Enjoy resort-style living in this beachfront condo. Amenities include a pool, gym, and direct beach access.",
+      "price": "$700,000",
+      "Status": "sale",
+      "Area": "1800 sq ft",
+      "location": "Miami, Florida",
+      "facilities": ["living room", "swimming pool", "Kitchen"],
+      "image_url": "https://imgbb.host/images/HXubZ.jpeg"
+    },
+    {
+      "id": 6,
+      "estate_title": "Mountain Retreat with Spectacular Views",
+      "segment_name": "Lodges",
+      "description": "Escape to nature in this mountain retreat. Serene surroundings and panoramic views await in this cozy cabin.",
+      "price": "$300/night",
+      "Status": "rent",
+      "Area": "1200 sq ft",
+      "location": "Asheville, North Carolina",
+      "facilities": ["living room", "Kitchen"],
+      "image_url": "https://imgbb.host/images/HXwBk.jpeg"
+    },
+    {
+      "id": 7,
+      "estate_title": "Luxury Penthouse in Skyline Tower",
+      "segment_name": "Guesthouses",
+      "description": "Indulge in luxury living in this stunning penthouse. Floor-to-ceiling windows offer breathtaking views of the city skyline.",
+      "price": "$3,000,000",
+      "Status": "sale",
+      "Area": "5000 sq ft",
+      "location": "Chicago, Illinois",
+      "facilities": ["living room", "swimming pool", "Kitchen"],
+      "image_url": "https://imgbb.host/images/HiZC6.jpeg"
+    },
+    {
+      "id": 8,
+      "estate_title": "Historic Townhouse with Modern Updates",
+      "segment_name": "Hotels",
+      "description": "Step back in time in this historic townhouse updated with modern amenities. Features original architecture and a private courtyard.",
+      "price": "$900,000",
+      "Status": "sale",
+      "Area": "2800 sq ft",
+      "location": "Charleston, South Carolina",
+      "facilities": ["living room", "Kitchen"],
+      "image_url": "https://imgbb.host/images/HiqDc.jpeg"
+    },
+    {
+      "id": 9,
+      "estate_title": "Lakefront Retreat with Private Dock",
+      "segment_name": "resorts",
+      "description": "Relax and unwind in this tranquil lakefront retreat. Enjoy fishing, boating, and stunning sunsets from your private dock.",
+      "price": "$600,000",
+      "Status": "sale",
+      "Area": "2200 sq ft",
+      "location": "Seattle, Washington",
+      "facilities": ["living room", "Kitchen"],
+      "image_url": "https://imgbb.host/images/Hiv1p.jpeg"
+    }
+    
+  ]
+  

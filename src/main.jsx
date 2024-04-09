@@ -6,10 +6,16 @@ import {
 } from "react-router-dom";
 
 import router from './router/Routes';
+import AuthProvider from './components/Providers/AuthProvider';
+import { GiToaster } from 'react-icons/gi';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
-    <RouterProvider router={router} />
+  <AuthProvider>
+  <RouterProvider router={router} ></RouterProvider>
+  
+  </AuthProvider>
+  
   </>,
 )
