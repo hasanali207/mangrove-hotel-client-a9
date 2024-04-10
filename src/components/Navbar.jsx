@@ -1,15 +1,13 @@
-import { Link, NavLink } from "react-router-dom";
-import userIcon from "../assets/user.png";
 import { useContext } from "react";
-import { AuthContext } from "./Providers/AuthProvider";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
+import userProfile from "../assets/user.png";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const handleSignOut = () =>{
-    logOut()
-    .then()
-    .catch()
-  }
+  const handleSignOut = () => {
+    logOut().then().catch();
+  };
 
   const NavList = (
     <>
@@ -19,13 +17,18 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/About" className="text-lg" href="">
+        <NavLink to="/about" className="text-lg" href="">
           About
         </NavLink>
       </li>
       <li>
         <NavLink to="/Contact" className="text-lg" href="">
           Contact
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/profile" className="text-lg" href="">
+          Profile
         </NavLink>
       </li>
     </>
@@ -68,27 +71,29 @@ const Navbar = () => {
 
       <div>
         <div
+          title={user?.displayName}
           tabIndex={0}
           role="button"
-          className="btn btn-ghost btn-circle avatar"
+          className="btn btn-ghost btn-circle avatar relative"
         >
           <div className="w-10 rounded-full">
-            <img alt="Tailwind CSS Navbar component" src={userIcon} />
+            {user ? (
+              <img alt="User" src={user?.photoURL || userProfile} />
+            ) : (
+              <img src={userProfile} alt="User" />
+            )}
           </div>
         </div>
 
-        {user ? 
+        {user ? (
           <Link onClick={handleSignOut}>
             <button className="btn">SignOut</button>
           </Link>
-         : 
+        ) : (
           <Link to="/login">
             <button className="btn">Login</button>
           </Link>
-        }
-
-
-
+        )}
       </div>
     </div>
   );

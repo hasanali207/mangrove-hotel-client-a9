@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import ErrorPage from "../components/ErrorPage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Profile from "../private/Profile";
+import Details from "../components/Details";
 
 const router = createBrowserRouter([
     {
@@ -13,7 +15,13 @@ const router = createBrowserRouter([
       children: [
         {
             path: "/",
-            element: <Home></Home>
+            element: <Home></Home>,
+            loader:() => fetch("/data.json")
+        },
+        {
+            path: "/details/:id",
+            element: <Details></Details>,
+            loader:() => fetch("../data.json")
         },
         {
             path: "/login",
@@ -22,6 +30,10 @@ const router = createBrowserRouter([
         {
             path: "/register",
             element: <Register></Register>,
+        },        
+        {
+            path: "/profile",
+            element: <Profile></Profile>,
         }
       ]
     },

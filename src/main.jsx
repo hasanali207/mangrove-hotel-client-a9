@@ -1,13 +1,13 @@
 
-import ReactDOM from 'react-dom/client'
-import './index.css'
+import ReactDOM from 'react-dom/client';
 import {
   RouterProvider,
 } from "react-router-dom";
+import './index.css';
+
 
 import router from './router/Routes';
-import AuthProvider from './components/Providers/AuthProvider';
-import { GiToaster } from 'react-icons/gi';
+import AuthProvider from './Providers/AuthProvider';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
