@@ -5,8 +5,9 @@ import userProfile from "../assets/user.png";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+
   const handleSignOut = () => {
-    logOut().then().catch();
+    return logOut().then().catch();
   };
 
   const NavList = (

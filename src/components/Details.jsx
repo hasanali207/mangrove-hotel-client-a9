@@ -2,6 +2,8 @@ import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import LeftSidebar from "./LeftSidebar";
+import RightSidebar from "./RightSidebar";
 const Details = () => {
   const items = useLoaderData();
   const { id } = useParams();
@@ -24,45 +26,46 @@ const Details = () => {
       <Navbar></Navbar>
 
       <div className="flex justify-between">
-        <div className="flex-1">Left side</div>
+        <div className="w-[200px]"><LeftSidebar></LeftSidebar></div>
 
-        <div className="p-5 mx-auto sm:p-10 md:p-16 bg-gray-800 text-gray-100">
-        <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
-          <img
-            src={image_url}
-            alt=""
-            className="w-full h-60 sm:h-96 bg-gray-500"
-          />
-          <div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md bg-gray-900">
-            <div className="space-y-2">
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="inline-block text-2xl font-semibold sm:text-3xl"
-              >
-                {estate_title}
-              </a>
-              <p className="text-xs text-gray-400">
-                By
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="text-xs hover:underline"
-                >
-                  {segment_name}
-                </a>
-              </p>
-            </div>
-            <div className="text-gray-100">
-              <p>{description}</p>
-            </div>
-          </div>
-        </div>
-      </div>
+        <div className="max-w-3xl px-6 py-16 mx-auto space-y-12">
+	<article className="space-y-8 dark:bg-gray-100 dark:text-gray-900">
+		<div className="space-y-6">
+			<h1 className="text-4xl font-bold md:tracking-tight md:text-5xl">{estate_title}</h1>
+			<figure>
+                <img src={image_url} alt="" />
+            </figure>
+		</div>
+		<div className="dark:text-gray-800">
+			<p>{description}</p>
+		</div>
+	</article>
+	<div>
+		<div className="flex flex-wrap py-6 gap-2 border-t border-dashed dark:border-gray-600">
+			<a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50">#MambaUI</a>
+			<a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50">#TailwindCSS</a>
+			<a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50">#Angular</a>
+		</div>
+		<div className="space-y-2">
+			<h4 className="text-lg font-semibold">Related posts</h4>
+			<ul className="ml-4 space-y-1 list-disc">
+				<li>
+					<a rel="noopener noreferrer" href="#" className="hover:underline">Nunc id magna mollis</a>
+				</li>
+				<li>
+					<a rel="noopener noreferrer" href="#" className="hover:underline">Duis molestie, neque eget pretium lobortis</a>
+				</li>
+				<li>
+					<a rel="noopener noreferrer" href="#" className="hover:underline">Mauris nec urna volutpat, aliquam lectus sit amet</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
 
 
-      <div className="flex-1">
-        right side
+      <div className="w-[200px]">
+        <RightSidebar></RightSidebar>
       </div>
       </div>
 

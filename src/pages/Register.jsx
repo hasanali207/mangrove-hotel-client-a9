@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Navbar from "../components/Navbar";
 import { updateProfile } from "firebase/auth";
+import { auth } from "../firebase/firebase.config";
 
 const Register = () => {
   const { createUser, logOut } = useContext(AuthContext);
@@ -34,11 +35,10 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         toast.success("Successfully Registered!");
-        console.log(result.user)
-        logOut()
+       
 
         
-        updateProfile(result.user, {
+        updateProfile(auth.result.user, {
           displayName: name, 
           photoURL: photo
 
@@ -55,6 +55,8 @@ const Register = () => {
       .catch(() => {
         toast.error("Already Registered");
       });
+      
+     
   };
 
   return (
