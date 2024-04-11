@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Navbar from "../components/Navbar";
+import Footer from '../components/Footer'
 
 import toast from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
@@ -92,6 +93,8 @@ const Login = () => {
           </div>
         </div>
       </div>
+
+      <Footer></Footer>
     </>
   );
 };

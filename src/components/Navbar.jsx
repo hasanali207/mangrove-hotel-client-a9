@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import userProfile from "../assets/user.png";
@@ -9,6 +9,9 @@ const Navbar = () => {
   const handleSignOut = () => {
     return logOut().then().catch();
   };
+
+  const [name, setName] = useState(localStorage.getItem('updatedName') || '');
+const [photo, setPhoto] = useState(localStorage.getItem('updatedPhoto') || '');
 
   const NavList = (
     <>
@@ -23,8 +26,13 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/Contact" className="text-lg" href="">
+        <NavLink to="/contact" className="text-lg" href="">
           Contact
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/services" className="text-lg" href="">
+          Services
         </NavLink>
       </li>
       <li>
@@ -72,14 +80,14 @@ const Navbar = () => {
 
       <div>
         <div
-          title={user?.displayName}
+          title={name || user?.displayName}
           tabIndex={0}
           role="button"
           className="btn btn-ghost btn-circle avatar relative"
         >
           <div className="w-10 rounded-full">
             {user ? (
-              <img alt="User" src={user?.photoURL || userProfile} />
+              <img alt="User" src={photo || user?.photoURL } />
             ) : (
               <img src={userProfile} alt="User" />
             )}
