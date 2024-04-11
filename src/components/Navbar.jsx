@@ -6,7 +6,7 @@ import userProfile from "../assets/user.png";
 const Navbar = () => {
   const { user, logOut, updateUserData } = useContext(AuthContext);
 
-  console.log(user)
+  
   const handleSignOut = () => {
     return logOut().then().catch();
   };

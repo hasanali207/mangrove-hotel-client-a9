@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import {useLocation, useNavigate, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Navbar from "../components/Navbar";
 import Footer from '../components/Footer';
@@ -7,24 +7,36 @@ import Footer from '../components/Footer';
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-
 const Login = () => {
   const { signInUser, googleLogin, githubLogin } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
-
+  const navigate = useNavigate()
+  const location = useLocation()
+  const getState = location?.state || '/'
+  
+  
+  
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
 
+   
+
     signInUser(email, password)
-      .then(() => {
+      .then((result) => {
         toast.success("Successfully Logged In");
+        if(result.user){
+          navigate(getState)
+        }
       })
       .catch(() => {
         toast.error("Email & Password Don't Match");
       });
+
+      
+
   };
 
   return (
