@@ -35,22 +35,8 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         toast.success("Successfully Registered!");
+        logOut()
        
-
-        
-        updateProfile(auth.result.user, {
-          displayName: name, 
-          photoURL: photo
-
-          
-        }).then(() => {
-         
-        }).catch(() => {
-         
-        });
-        
-        
-
       })
       .catch(() => {
         toast.error("Already Registered");

@@ -2,16 +2,15 @@ import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Navbar from "../components/Navbar";
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
 
 import toast from "react-hot-toast";
-import { FaEye } from "react-icons/fa";
-import { FaEyeSlash } from "react-icons/fa6";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const Login = () => {
-  const { signInUser } = useContext(AuthContext);
-  const [showPass, setShowPass] = useState(false)
+  const { signInUser, googleLogin, githubLogin } = useContext(AuthContext);
+  const [showPass, setShowPass] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -30,7 +29,7 @@ const Login = () => {
 
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar />
       <div className="hero-content bg-blue rounded-2xl min-h-[calc(100vh-80px)]">
         <div className="card shadow-2xl bg-base-100 w-full md:w-1/2 lg:w-1/3">
           <h1 className="text-center text-2xl text-black font-semibold mt-6">
@@ -38,7 +37,7 @@ const Login = () => {
           </h1>
 
           <form onSubmit={handleLogin} className="card-body p-6">
-            <div className="form-control ">
+            <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
@@ -55,17 +54,17 @@ const Login = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type={showPass? "text":"password"}
+                type={showPass ? "text" : "password"}
                 placeholder="password"
                 className="input input-bordered"
                 name="password"
                 required
               />
-              <span 
+              <span
                 onClick={() => setShowPass(!showPass)}
                 className="absolute bottom-4 right-2 cursor-pointer"
               >
-                {showPass ?<FaEye></FaEye>: <FaEyeSlash></FaEyeSlash> }
+                {showPass ? <FaEye /> : <FaEyeSlash />}
               </span>
             </div>
             <div className="form-control">
@@ -76,10 +75,10 @@ const Login = () => {
           </form>
           <div className="px-6">
             <div className=" flex justify-between">
-              <button className="btn btn-outline hover:bg-opacity-0 hover:text-black ">
+              <button onClick={googleLogin} className="btn btn-outline hover:bg-opacity-0 hover:text-black ">
                 Login With Google{" "}
               </button>
-              <button className="btn btn-outline hover:bg-opacity-0 hover:text-black ">
+              <button onClick={githubLogin} className="btn btn-outline hover:bg-opacity-0 hover:text-black ">
                 Login With Github
               </button>
             </div>
@@ -94,7 +93,7 @@ const Login = () => {
         </div>
       </div>
 
-      <Footer></Footer>
+      <Footer />
     </>
   );
 };

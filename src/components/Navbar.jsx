@@ -4,14 +4,12 @@ import { AuthContext } from "../Providers/AuthProvider";
 import userProfile from "../assets/user.png";
 
 const Navbar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, updateUserData } = useContext(AuthContext);
 
+  console.log(user)
   const handleSignOut = () => {
     return logOut().then().catch();
   };
-
-  const [name, setName] = useState(localStorage.getItem('updatedName') || '');
-const [photo, setPhoto] = useState(localStorage.getItem('updatedPhoto') || '');
 
   const NavList = (
     <>
@@ -80,14 +78,14 @@ const [photo, setPhoto] = useState(localStorage.getItem('updatedPhoto') || '');
 
       <div>
         <div
-          title={name || user?.displayName}
+          title={user?.displayName}
           tabIndex={0}
           role="button"
           className="btn btn-ghost btn-circle avatar relative"
         >
           <div className="w-10 rounded-full">
             {user ? (
-              <img alt="User" src={photo || user?.photoURL } />
+              <img alt="User" src={user?.photoURL } />
             ) : (
               <img src={userProfile} alt="User" />
             )}

@@ -7,13 +7,31 @@ import {
   createUserWithEmailAndPassword, 
   signInWithEmailAndPassword, 
   signOut, 
-  onAuthStateChanged 
+  onAuthStateChanged, 
+  GoogleAuthProvider,
+  signInWithPopup,
+  GithubAuthProvider,
+  updateProfile
 } from "firebase/auth";
 
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+
+  console.log(user);
+  const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
+
+
+  const googleLogin = () =>{
+    return signInWithPopup(auth, googleProvider)
+  }
+  const githubLogin = () =>{
+    return signInWithPopup(auth, githubProvider)
+  }
+
+
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -50,19 +68,28 @@ const AuthProvider = ({ children }) => {
   };
 
   const updateUserData = (name, photo) => {
-    setUser((user) => ({
-      ...user,
-      displayName: name,
-      photoURL: photo
-    }));
-    // Return a resolved Promise
-    return Promise.resolve();
+    return updateProfile(auth.currentUser, {
+      displayName: name, photoURL: photo
+    })
+    .then(() => {
+      setUser((user) => ({
+        ...user,
+        displayName: name,
+        photoURL: photo
+      }));
+      
+    }).catch((error) => {
+      
+    });
+
+
+  
   };
 
   useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log("this is current User", currentUser);
-      setUser(currentUser); // Update setUser with currentUser instead of user
+    const unSubscribe = onAuthStateChanged(auth, (user) => {
+      console.log("this is current User", user);
+      setUser(user); // Update setUser with currentUser instead of user
     });
 
     return () => {
@@ -78,7 +105,9 @@ const AuthProvider = ({ children }) => {
     createUser,
     logOut,
     signInUser,
-    updateUserData
+    updateUserData,
+    googleLogin,
+    githubLogin
   };
 
   return (

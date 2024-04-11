@@ -1,28 +1,27 @@
 import React, { useContext, useState } from "react";
 import Navbar from "../components/Navbar";
 import { AuthContext } from "../Providers/AuthProvider";
+
+import toast from "react-hot-toast";
+
 const Profile = () => {
-  const { updateUserData } = useContext(AuthContext);
-  const [name, setName] = useState(localStorage.getItem("updatedName") || "");
-  const [photo, setPhoto] = useState(
-    localStorage.getItem("updatedPhoto") || ""
-  );
+
+  const {updateUserData, user } = useContext(AuthContext);
+  const [name, setName] = useState("");
+  const [photo, setPhoto] = useState("");
+
   const handleUpdate = (e) => {
     e.preventDefault();
 
     updateUserData(name, photo)
       .then(() => {
-        localStorage.setItem("updatedName", name);
-        localStorage.setItem("updatedPhoto", photo);
-
-        window.location.reload();
-        // or navigate('/profile');
+        setName('')
+        setPhoto('')
+        toast.success("User data updated successfully.");
       })
       .catch((error) => {
-        console.error("Error updating user data:", error.message);
+        
       });
-    setName("");
-    setPhoto("");
   };
 
   return (
@@ -43,9 +42,8 @@ const Profile = () => {
                 name="name"
                 className="input input-bordered"
                 required
-                value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder={"Enter your name"}
+                placeholder={ "Enter your name"}
               />
             </div>
             <div className="form-control ">
@@ -56,9 +54,8 @@ const Profile = () => {
                 type="text"
                 className="input input-bordered"
                 required
-                id="photo"
                 name="photo"
-                value={photo}
+                
                 onChange={(e) => setPhoto(e.target.value)}
                 placeholder={"Enter photo URL"}
               />
@@ -67,8 +64,7 @@ const Profile = () => {
             <div className="form-control">
               <button
                 className="btn bg-black hover:bg-gray-dark hover:text-black text-white"
-                type="submit"
-                
+                                
               >
                 Update
               </button>
