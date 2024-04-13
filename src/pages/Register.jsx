@@ -7,6 +7,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 import Navbar from "../components/Navbar";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const { createUser, logOut } = useContext(AuthContext);
@@ -47,6 +48,7 @@ const Register = () => {
 
   return (
     <>
+    <Helmet><title>Register</title></Helmet>
       <Navbar></Navbar>
 
       <div className="hero-content bg-blue rounded-2xl min-h-[calc(100vh-80px)]">

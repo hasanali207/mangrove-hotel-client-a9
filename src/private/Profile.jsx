@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import { AuthContext } from "../Providers/AuthProvider";
 
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const Profile = () => {
 
@@ -26,6 +27,7 @@ const Profile = () => {
 
   return (
     <>
+    <Helmet><title>Update Profile</title></Helmet>
       <Navbar />
       <div className="hero-content bg-blue rounded-2xl min-h-[calc(100vh-80px)]">
         <div className="card shadow-2xl bg-base-100 w-full md:w-1/2 lg:w-1/3">

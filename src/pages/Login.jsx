@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const { signInUser, googleLogin, githubLogin } = useContext(AuthContext);
@@ -41,6 +42,7 @@ const Login = () => {
 
   return (
     <>
+    <Helmet><title>Login</title></Helmet>
       <Navbar />
       <div className="hero-content bg-blue rounded-2xl min-h-[calc(100vh-80px)]">
         <div className="card shadow-2xl bg-base-100 w-full md:w-1/2 lg:w-1/3">

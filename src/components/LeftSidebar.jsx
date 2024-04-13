@@ -1,46 +1,66 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const LeftSidebar = () => {
+	
+	const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch('/data.json')
+      .then(res => res.json()) 
+      .then(data => setItems(data))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
+  
+  
     return (
         <aside className="w-full p-6 sm:w-60 dark:bg-gray-50 dark:text-gray-800">
 	<nav className="space-y-8 text-sm">
 		<div className="space-y-2">
-			<h2 className="text-sm font-semibold tracking-widest uppercase dark:text-gray-600">Getting Started</h2>
-			<div className="flex flex-col space-y-1">
-				<a rel="noopener noreferrer" href="#">Installation</a>
-				<a rel="noopener noreferrer" href="#">Plugins</a>
-				<a rel="noopener noreferrer" href="#">Migrations</a>
-				<a rel="noopener noreferrer" href="#">Appearance</a>
-				<a rel="noopener noreferrer" href="#">Mamba UI</a>
+			<h2 className="text-sm font-semibold tracking-widest uppercase dark:text-gray-600">Categories Name:</h2>
+			
+			<div className="flex flex-col">
+				
+				{items.map((item) => (
+						<a className='text-lg' key={item.id}>{item.segment_name}</a>
+				))}
+				
+				
 			</div>
 		</div>
 		<div className="space-y-2">
-			<h2 className="text-sm font-semibold tracking-widest uppercase dark:text-gray-600">Dashboard</h2>
+			<h2 className="text-sm font-semibold tracking-widest uppercase dark:text-gray-600">Pages:</h2>
 			<div className="flex flex-col space-y-1">
-				<a rel="noopener noreferrer" href="#">Header</a>
-				<a rel="noopener noreferrer" href="#">Drawer</a>
-				<a rel="noopener noreferrer" href="#">Page Title</a>
-				<a rel="noopener noreferrer" href="#">Menus</a>
-				<a rel="noopener noreferrer" href="#">Sidebar</a>
-				<a rel="noopener noreferrer" href="#">Footer</a>
+			<li className="bg-white">
+        <NavLink to="/" className="text-lg" href="">
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/about" className="text-lg" href="">
+          About
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/contact" className="text-lg" href="">
+          Contact
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/services" className="text-lg" href="">
+          Services
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/profile" className="text-lg" href="">
+          Profile
+        </NavLink>
+      </li>
 			</div>
 		</div>
-		<div className="space-y-2">
-			<h2 className="text-sm font-semibold tracking-widest uppercase dark:text-gray-600">Pages</h2>
-			<div className="flex flex-col space-y-1">
-				<a rel="noopener noreferrer" href="#">Homepage</a>
-				<a rel="noopener noreferrer" href="#">Users</a>
-				<a rel="noopener noreferrer" href="#">Tools</a>
-				<a rel="noopener noreferrer" href="#">Settings</a>
-			</div>
-		</div>
-		<div className="space-y-2">
-			<h2 className="text-sm font-semibold tracking-widest uppercase dark:text-gray-600">Misc</h2>
-			<div className="flex flex-col space-y-1">
-				<a rel="noopener noreferrer" href="#">Tutorials</a>
-				<a rel="noopener noreferrer" href="#">Changelog</a>
-			</div>
-		</div>
+		
+		
 	</nav>
 </aside>
     );

@@ -7,11 +7,12 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
     
     if (user) {
-        // Set the desired pathname in the state object
-        return {children};
+        // Render the children if the user is authenticated
+        return <React.Fragment>{children}</React.Fragment>;
     }
 
-    return <Navigate to='/login' state={location?.pathname}></Navigate>
+    // Redirect to the login page with the current pathname in the state
+    return <Navigate to="/login" state={{ from: location }} />;
 };
 
 export default PrivateRoute;

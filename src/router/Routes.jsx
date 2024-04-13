@@ -10,9 +10,11 @@ import PrivateRoute from "../private/PrivateRoute";
 import Services from "../private/Services";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
+import { Helmet } from "react-helmet";
 
 const router = createBrowserRouter([
     {
+       
       path: "/",
       element: <Root></Root>,
       errorElement: <ErrorPage></ErrorPage>,
@@ -24,8 +26,8 @@ const router = createBrowserRouter([
         },
         {
             path: "/details/:id",
-            element: <PrivateRoute><Details></Details></PrivateRoute>,
-            loader:() => fetch("../data.json")
+            element: <><Details></Details></>,
+            loader:() => fetch("/data.json")
         },
         {
             path: "/about",

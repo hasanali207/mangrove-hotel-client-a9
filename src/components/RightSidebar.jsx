@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const RightSidebar = () => {
+
+  
+   
+    
     return (
         <section className="py-6">
             <h2 className="text-sm font-semibold tracking-widest mb-4 uppercase ">Tourist Place</h2>
