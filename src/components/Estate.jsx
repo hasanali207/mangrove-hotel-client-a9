@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom"
-import Details from "./Details";
-
+import { Link, NavLink } from "react-router-dom"
 const Estate = ({ item }) => {
         
     const {image_url, price, estate_title, segment_name, id} = item
@@ -19,11 +17,10 @@ const Estate = ({ item }) => {
           <h2 className="card-title">{estate_title}</h2>
             <h2 className="text-lg">{segment_name}</h2>
           <div className="card-actions flex justify-between">
-          <Link to={`/details/${id}`} onClick={Details} >
+          <Link to={`/details/${id}`} state={estate_title}>
             <button className="btn bg-black  text-white">View Property</button>
             </Link>
-            <div>
-                
+            <div> 
             <button className="btn btn-outline">Price:{price}</button>
             </div>
           </div>

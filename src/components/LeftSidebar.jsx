@@ -15,10 +15,10 @@ const LeftSidebar = () => {
   
   
     return (
-        <aside className="w-full p-6 sm:w-60 dark:bg-gray-50 dark:text-gray-800">
+        <aside className="w-full p-6 dark:bg-gray-50 dark:text-gray-800">
 	<nav className="space-y-8 text-sm">
 		<div className="space-y-2">
-			<h2 className="text-sm font-semibold tracking-widest uppercase dark:text-gray-600">Categories Name:</h2>
+			<h2 className="text-lg font-semibold tracking-widest uppercase dark:text-gray-600">Categories Name:</h2>
 			
 			<div className="flex flex-col">
 				
@@ -30,29 +30,29 @@ const LeftSidebar = () => {
 			</div>
 		</div>
 		<div className="space-y-2">
-			<h2 className="text-sm font-semibold tracking-widest uppercase dark:text-gray-600">Pages:</h2>
+			<h2 className="text-xl font-semibold tracking-widest uppercase dark:text-gray-600">Pages:</h2>
 			<div className="flex flex-col space-y-1">
-			<li className="bg-white">
+			<li className="list-none">
         <NavLink to="/" className="text-lg" href="">
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink to="/about" className="text-lg" href="">
+      <li className="list-none">
+        <NavLink to="/about" className="text-lg " href="">
           About
         </NavLink>
       </li>
-      <li>
+      <li className="list-none">
         <NavLink to="/contact" className="text-lg" href="">
           Contact
         </NavLink>
       </li>
-      <li>
+      <li className="list-none">
         <NavLink to="/services" className="text-lg" href="">
           Services
         </NavLink>
       </li>
-      <li>
+      <li className="list-none">
         <NavLink to="/profile" className="text-lg" href="">
           Profile
         </NavLink>

@@ -10,7 +10,8 @@ const Profile = () => {
   const {updateUserData, user } = useContext(AuthContext);
   const [name, setName] = useState("");
   const [photo, setPhoto] = useState("");
-
+  console.log(user);
+  
   const handleUpdate = (e) => {
     e.preventDefault();
 
@@ -45,7 +46,8 @@ const Profile = () => {
                 className="input input-bordered"
                 required
                 onChange={(e) => setName(e.target.value)}
-                placeholder={ "Enter your name"}
+                placeholder={user?.displayName || "Enter your name"}
+
               />
             </div>
             <div className="form-control ">
@@ -57,9 +59,8 @@ const Profile = () => {
                 className="input input-bordered"
                 required
                 name="photo"
-                
                 onChange={(e) => setPhoto(e.target.value)}
-                placeholder={"Enter photo URL"}
+                placeholder={user.photoURL || "Enter photo URL"}
               />
             </div>
 

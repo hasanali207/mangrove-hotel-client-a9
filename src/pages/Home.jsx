@@ -3,16 +3,13 @@ import Footer from '../components/Footer';
 import Slider from '../components/Slider';
 import Estate from '../components/Estate';
 import { useLoaderData } from "react-router-dom";
-import { Helmet } from 'react-helmet';
 const Home = () => {
     
     const items = useLoaderData()
   
     return (
         <div>
-            <Helmet>
-                <title>Home</title>
-            </Helmet>
+           
             <Navbar />
             <Slider />
            <div className='py-12 p-4 lg:px-0'>

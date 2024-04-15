@@ -1,40 +1,41 @@
 import { useContext, useState } from "react";
-import {useLocation, useNavigate, NavLink } from "react-router-dom";
+import {NavLink, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Navbar from "../components/Navbar";
 import Footer from '../components/Footer';
 
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Helmet } from "react-helmet";
 
 const Login = () => {
   const { signInUser, googleLogin, githubLogin } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
-  const navigate = useNavigate()
+  
   const location = useLocation()
+  const navigate = useNavigate()
   const getState = location?.state || '/'
   
-  
-  
+   
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
 
-   
+    
+  signInUser(email, password)
+  .then((result) => {
+    if(result.user){
+      navigate('/');
+    }
+    
+    toast.success("Successfully Logged In");
+    
+  })
+  .catch(() => {
+    toast.error("Email & Password Don't Match");
+  });
 
-    signInUser(email, password)
-      .then((result) => {
-        toast.success("Successfully Logged In");
-        if(result.user){
-          navigate(getState)
-        }
-      })
-      .catch(() => {
-        toast.error("Email & Password Don't Match");
-      });
 
       
 
@@ -42,7 +43,7 @@ const Login = () => {
 
   return (
     <>
-    <Helmet><title>Login</title></Helmet>
+   
       <Navbar />
       <div className="hero-content bg-blue rounded-2xl min-h-[calc(100vh-80px)]">
         <div className="card shadow-2xl bg-base-100 w-full md:w-1/2 lg:w-1/3">

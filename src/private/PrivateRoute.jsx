@@ -4,15 +4,17 @@ import { Navigate, useLocation } from 'react-router-dom';
 
 const PrivateRoute = ({ children }) => {
     const { user } = useContext(AuthContext);
-    const location = useLocation();
+   const location = useLocation()
     
-    if (user) {
-        // Render the children if the user is authenticated
-        return <React.Fragment>{children}</React.Fragment>;
+    if (!user) {
+        return <Navigate to='/login' state={location?.pathname || '/'}></Navigate>
     }
 
-    // Redirect to the login page with the current pathname in the state
-    return <Navigate to="/login" state={{ from: location }} />;
+    return (
+    <div>   
+        {children}
+    </div>
+    );
 };
 
 export default PrivateRoute;

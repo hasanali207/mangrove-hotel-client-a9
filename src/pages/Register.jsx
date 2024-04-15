@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
 import { Helmet } from "react-helmet";
+import Footer from "../components/Footer";
 
 const Register = () => {
   const { createUser, logOut } = useContext(AuthContext);
@@ -48,9 +49,7 @@ const Register = () => {
 
   return (
     <>
-    <Helmet><title>Register</title></Helmet>
-      <Navbar></Navbar>
-
+    <Navbar></Navbar>
       <div className="hero-content bg-blue rounded-2xl min-h-[calc(100vh-80px)]">
         <div className="card shadow-2xl bg-base-100 w-full md:w-1/2 lg:w-1/3">
           <h1 className="text-center text-2xl text-black font-semibold mt-6">
@@ -128,6 +127,8 @@ const Register = () => {
           </form>
         </div>
       </div>
+
+      <Footer></Footer>
     </>
   );
 };
