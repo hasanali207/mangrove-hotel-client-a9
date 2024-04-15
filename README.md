@@ -10,6 +10,6 @@ Currently, two official plugins are available:
 - Added react Router, Daisy Ui, Tailwind
 - Added React Hot Toast, React Icon
 - Added Swiper js Slider in Home page
-- added npm i react-animated-css --save
+- added aos animation 
 
 

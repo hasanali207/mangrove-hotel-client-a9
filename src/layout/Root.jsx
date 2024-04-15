@@ -4,7 +4,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 
 const Root = () => {
     const location = useLocation();
-       
+        
     useEffect(()=>{
         if(location.pathname === '/'){
             document.title = `Home`

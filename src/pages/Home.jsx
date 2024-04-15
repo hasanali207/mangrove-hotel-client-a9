@@ -3,6 +3,7 @@ import Footer from '../components/Footer';
 import Slider from '../components/Slider';
 import Estate from '../components/Estate';
 import { useLoaderData } from "react-router-dom";
+import Apartment from '../components/Apartment';
 const Home = () => {
     
     const items = useLoaderData()
@@ -23,7 +24,7 @@ const Home = () => {
            
            
            </div>
-
+            <Apartment></Apartment>
            
             <Footer />
         </div>
