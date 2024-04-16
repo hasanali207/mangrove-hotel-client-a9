@@ -35,6 +35,7 @@ const Profile = () => {
           <h1 className="text-center text-2xl text-black font-semibold mt-6">
             Update Your Profile
           </h1>
+          <h2 className="text-center">Email: {user?.email}</h2>
           <form onSubmit={handleUpdate} className="card-body p-6">
             <div className="form-control ">
               <label className="label">

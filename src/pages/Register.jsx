@@ -2,12 +2,9 @@ import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Navbar from "../components/Navbar";
-import { updateProfile } from "firebase/auth";
-import { auth } from "../firebase/firebase.config";
-import { Helmet } from "react-helmet";
 import Footer from "../components/Footer";
 
 const Register = () => {
@@ -20,8 +17,6 @@ const Register = () => {
     const password = form.get("password");
     const name = form.get("name");
     const photo = form.get("photo");
-
-    console.log(email, password, name, photo);
 
     if (password.length < 6) {
       toast.error("Password Must Be 6 Character");
@@ -37,7 +32,7 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         toast.success("Successfully Registered!");
-        logOut()
+        logOut();
        
       })
       .catch(() => {

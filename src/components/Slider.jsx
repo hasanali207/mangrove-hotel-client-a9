@@ -14,7 +14,7 @@ const Slider = () => {
   return (
     <div className="z-0">
       <Swiper
-        className="rounded-2xl"
+        className="rounded-2xl z-0"
         // install Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
@@ -22,8 +22,6 @@ const Slider = () => {
         navigation
         autoplay 
         pagination={{ clickable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
       >
         <SwiperSlide>
           <img src={slide1} alt="" />
