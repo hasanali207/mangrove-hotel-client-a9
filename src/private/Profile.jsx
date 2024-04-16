@@ -34,8 +34,8 @@ const Profile = () => {
       <div className="relative h-[90vh] overflow-hidden flex justify-center items-center rounded-3xl" style={{
     background: `linear-gradient(0.00deg, rgba(21, 11, 43, 0.9), rgba(21, 11, 43, 0) 70%), url(${bannerImageUrl})`,
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-}}>
+    backgroundSize: 'cover',               
+      }}>
 
 
         <div className="card shadow-2xl bg-base-100 w-full md:w-1/2 lg:w-1/3">

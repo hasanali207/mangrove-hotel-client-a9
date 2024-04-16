@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
 import bannerImageUrl from '../assets/img-37.jpg'
+import ClientReview from "../components/ClientReview";
 const About = () => {
   return (
     <div>
@@ -11,11 +12,11 @@ const About = () => {
             <h1 className="text-black font-bold text-3xl animate__animated animate__fadeIn">About</h1>
       </div> 
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 bg-gray-800 text-gray-100">
-        <h2 className="mb-8 text-4xl font-bold leading-none text-center text-black">
+        <h2 className="mb-8 text-4xl font-bold leading-none text-center text-black animate__animated animate__backInRight">
           What do we have to offer?
         </h2>
-        <ul className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-          <li className="flex items-center space-x-2">
+        <ul className="grid gap-3 md:grid-cols-2 lg:grid-cols-3 animate__animated animate__backInUp ">
+          <li className="flex items-center space-x-2">  
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
@@ -84,7 +85,7 @@ const About = () => {
         </ul>
       </div>
 
-    
+    <ClientReview></ClientReview>
    
 
 

@@ -47,10 +47,11 @@ const Register = () => {
     <Navbar></Navbar>
 
     <div className="px-8 lg:px-0 relative h-[100vh] overflow-hidden flex justify-center items-center rounded-3xl" style={{
-    background: `linear-gradient(0.00deg, rgba(21, 11, 43, 0.9), rgba(21, 11, 43, 0) 70%), url(${bannerImageUrl})`,
+    background: `linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(${bannerImageUrl})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
 }}>
+
 
         <div className="card shadow-2xl bg-base-100 w-full md:w-1/2 lg:w-1/3">
           <h1 className="text-center text-2xl text-black font-semibold mt-6">
