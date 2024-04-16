@@ -12,7 +12,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 const Slider = () => {
   return (
-    <div className="z-0">
+    <div className="">
       <Swiper
         className="rounded-2xl z-0"
         // install Swiper modules
@@ -36,7 +36,14 @@ const Slider = () => {
         </SwiperSlide>
       </Swiper>
      
+      {/* <div className="absolute top-1/2 right-1/2 translate-x-1/2 z-30">
+      <h1 className="bg-gradient-to-r text-center from-blue to-green font-extrabold text-5xl text-green text-transparent bg-clip-text">
+        Wrold First Class Hotel <br></br> Mangrove Hotel
+      </h1>
+    </div> */}
+
     </div>
+    
   );
 };
 

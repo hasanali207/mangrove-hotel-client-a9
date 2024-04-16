@@ -6,7 +6,7 @@ import { NavLink} from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import bannerImageUrl from '../assets/formbg1.jpg'
 const Register = () => {
   const { createUser, logOut } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
@@ -45,7 +45,13 @@ const Register = () => {
   return (
     <>
     <Navbar></Navbar>
-      <div className="hero-content bg-blue rounded-2xl min-h-[calc(100vh-80px)]">
+
+    <div className="px-8 lg:px-0 relative h-[100vh] overflow-hidden flex justify-center items-center rounded-3xl" style={{
+    background: `linear-gradient(0.00deg, rgba(21, 11, 43, 0.9), rgba(21, 11, 43, 0) 70%), url(${bannerImageUrl})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+}}>
+
         <div className="card shadow-2xl bg-base-100 w-full md:w-1/2 lg:w-1/3">
           <h1 className="text-center text-2xl text-black font-semibold mt-6">
             Please Register
@@ -122,6 +128,10 @@ const Register = () => {
           </form>
         </div>
       </div>
+
+    
+
+     
 
       <Footer></Footer>
     </>

@@ -4,6 +4,8 @@ import { AuthContext } from "../Providers/AuthProvider";
 import Navbar from "../components/Navbar";
 import Footer from '../components/Footer';
 
+import bannerImageUrl from '../assets/formbg1.jpg'
+
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import SocialLogin from "../components/SocialLogin";
@@ -11,7 +13,7 @@ import SocialLogin from "../components/SocialLogin";
 const Login = () => {
   const { signInUser} = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
-  
+
   const location = useLocation()
   const navigate = useNavigate()
   const getState = location?.state || '/'
@@ -47,7 +49,14 @@ const Login = () => {
     <>
    
       <Navbar />
-      <div className="hero-content bg-blue rounded-2xl min-h-[calc(100vh-80px)]">
+
+      <div className="px-8 lg:px-0 relative h-[90vh] overflow-hidden flex justify-center items-center rounded-3xl" style={{
+    background: `linear-gradient(0.00deg, rgba(21, 11, 43, 0.9), rgba(21, 11, 43, 0) 70%), url(${bannerImageUrl})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+}}>
+
+
         <div className="card shadow-2xl  bg-base-100 w-full md:w-1/2 lg:w-1/3">
           <h1 className="text-center text-2xl text-black font-semibold mt-6">
             Please Login
@@ -102,6 +111,9 @@ const Login = () => {
           </div>
         </div>
       </div>
+
+       
+     
 
       <Footer />
     </>

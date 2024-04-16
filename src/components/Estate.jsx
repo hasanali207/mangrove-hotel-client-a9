@@ -4,11 +4,11 @@ const Estate = ({ item }) => {
 
   return (
     <>
-      <div className="card card-compact flex flex-col justify-between height-[700px] bg-gray-dark shadow-xl">
+      <div className="card card-compact flex flex-col justify-between bg-gray-dark shadow-xl">
         <figure data-aos="zoom-in" className="p-6 ">
           <img className="rounded-2xl" src={image_url} alt="image here" />
         </figure>
-        <div className="card-body">
+        <div className="card-body flex justify-between">
           <h2
             data-aos="fade-right"
             className="card-title"
@@ -16,7 +16,8 @@ const Estate = ({ item }) => {
             {estate_title}
           </h2>
           <h2 className="text-lg">{segment_name}</h2>
-          <div
+         
+         <div
             data-aos="fade-up"
             className="card-actions flex justify-between"
           >
@@ -29,8 +30,8 @@ const Estate = ({ item }) => {
               <button className="btn btn-outline">Price:{price}</button>
             </div>
           </div>
+         </div>
         </div>
-      </div>
     </>
   );
 };

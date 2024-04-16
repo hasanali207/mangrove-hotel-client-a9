@@ -3,7 +3,8 @@ import Navbar from "../components/Navbar";
 import { AuthContext } from "../Providers/AuthProvider";
 
 import toast from "react-hot-toast";
-import { Helmet } from "react-helmet";
+import  bannerImageUrl  from "../assets/img-38.jpg";
+import Footer from "../components/Footer";
 
 const Profile = () => {
 
@@ -28,9 +29,15 @@ const Profile = () => {
 
   return (
     <>
-    <Helmet><title>Update Profile</title></Helmet>
+   
       <Navbar />
-      <div className="hero-content bg-blue rounded-2xl min-h-[calc(100vh-80px)]">
+      <div className="relative h-[90vh] overflow-hidden flex justify-center items-center rounded-3xl" style={{
+    background: `linear-gradient(0.00deg, rgba(21, 11, 43, 0.9), rgba(21, 11, 43, 0) 70%), url(${bannerImageUrl})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+}}>
+
+
         <div className="card shadow-2xl bg-base-100 w-full md:w-1/2 lg:w-1/3">
           <h1 className="text-center text-2xl text-black font-semibold mt-6">
             Update Your Profile
@@ -76,6 +83,10 @@ const Profile = () => {
           </form>
         </div>
       </div>
+
+      
+<Footer></Footer>
+      
     </>
   );
 };

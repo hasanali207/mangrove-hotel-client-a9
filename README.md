@@ -11,5 +11,8 @@ Currently, two official plugins are available:
 - Added React Hot Toast, React Icon
 - Added Swiper js Slider in Home page
 - added aos animation 
+- added .env.local file for protect firebase api
+- Used Animated Css
+
 
 
