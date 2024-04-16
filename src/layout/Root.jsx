@@ -15,7 +15,7 @@ const Root = () => {
     }, [location.pathname])
 
     return (
-        <div className='max-w-7xl mx-auto font-exo'>
+        <div className='max-w-7xl lg:px-0 px-4 mx-auto font-exo'>
             <Outlet></Outlet>
         </div>
     );
