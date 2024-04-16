@@ -42,7 +42,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 flex justify-between items-center">
+    <div className="navbar bg-base-100 flex justify-between  items-center">
       <div className="">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost z-50 lg:hidden">

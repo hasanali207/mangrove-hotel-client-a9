@@ -3,17 +3,15 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+console.log('inside firebase', import.meta.env.VITE_APP_ID);
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDJG-_ComjJ2njuct9k-_BwgbIX8E2Qpjg",
-  authDomain: "mangrove-hotel-70703.firebaseapp.com",
-  projectId: "mangrove-hotel-70703",
-  storageBucket: "mangrove-hotel-70703.appspot.com",
-  messagingSenderId: "7241539716",
-  appId: "1:7241539716:web:bc2e00081c9a12c6c7e2d1"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId:import.meta.env.VITE_PROJECT_ID ,
+  storageBucket:import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID
 };
 
 
