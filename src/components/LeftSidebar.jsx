@@ -18,7 +18,7 @@ const LeftSidebar = () => {
         <aside className="w-full p-6 dark:bg-gray-50 dark:text-gray-800">
 	<nav className="space-y-8 text-sm">
 		<div className="space-y-2">
-			<h2 className="text-lg font-semibold tracking-widest uppercase dark:text-gray-600">Categories Name:</h2>
+			<h2 className="text-lg font-semibold tracking-widest uppercase dark:text-gray-600">Categories:</h2>
 			
 			<div className="flex flex-col">
 				

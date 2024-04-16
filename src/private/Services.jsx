@@ -8,7 +8,8 @@ const Services = () => {
         <div>
             <Helmet><title>Services</title></Helmet>
             <Navbar></Navbar>
-            <h1>This is Services Page</h1>
+           
+    
             <Footer></Footer>
         </div>
     );

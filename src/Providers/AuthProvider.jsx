@@ -19,7 +19,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  console.log(user);
+  
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
@@ -34,9 +34,9 @@ const AuthProvider = ({ children }) => {
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        setUser(userCredential.user);
-        return userCredential.user;
+      .then((result) => {
+        setUser(result.user);
+        return result.user;
       })
       .catch((error) => {
         console.error("Error creating user:", error.message);
@@ -46,9 +46,9 @@ const AuthProvider = ({ children }) => {
 
   const signInUser = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        setUser(userCredential.user);
-        return userCredential.user;
+      .then((result) => {
+        setUser(result.user);
+        return result.user;
       })
       .catch((error) => {
         console.error("Error signing in:", error.message);

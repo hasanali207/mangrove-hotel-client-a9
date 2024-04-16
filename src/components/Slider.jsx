@@ -12,7 +12,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 const Slider = () => {
   return (
-    <div className="">
+    <div className="z-0">
       <Swiper
         className="rounded-2xl"
         // install Swiper modules

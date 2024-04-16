@@ -45,7 +45,7 @@ const Navbar = () => {
     <div className="navbar bg-base-100 flex justify-between items-center">
       <div className="">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="btn btn-ghost z-50 lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
