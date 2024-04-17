@@ -13,7 +13,7 @@ This template provides a minimal setup to get React working in Vite with HMR and
 - Live Site Link:
  https://mangrove-hotel-70703.web.app/
 
--GitHub Repo Link: 
+- GitHub Repo Link: 
 https://github.com/programming-hero-web-course-4/b9a9-real-estate-hasanali207
 
 
