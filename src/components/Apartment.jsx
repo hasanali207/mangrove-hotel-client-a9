@@ -5,8 +5,8 @@ import img3  from '../assets/img-3.jpg'
 const Apartment = () => {
     return (
         <div>
-            <div className="py-20">
-			<h1  className=" text-center text-3xl text-black font-bold md:tracking-tight md:text-4xl mb-20">Choose Your Apartment Type
+            <div className="">
+			<h1  className=" text-center text-3xl text-black font-bold md:tracking-tight md:text-4xl my-10">Choose Your Apartment Type
             </h1>
 
                 <div className='flex flex-col md:flex-row  items-center justify-between gap-6' >
