@@ -1,8 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Helmet } from "react-helmet";
-import bannerImageUrl from '../assets/img-37.jpg'
 import ClientReview from "../components/ClientReview";
 const About = () => {
   return (

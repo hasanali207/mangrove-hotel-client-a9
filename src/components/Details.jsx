@@ -27,11 +27,11 @@ const Details = () => {
 
       <div className="flex flex-col lg:flex-row justify-between">
        <div className="flex lg:flex-row flex-col-reverse justify-between">
-       <div className="w-full lg:w-[200px]">
+       <div data-aos="fade-right"  className="w-full lg:w-[200px]">
           <LeftSidebar></LeftSidebar>
         </div>
 
-        <div className="max-w-3xl px-6 py-16 mx-auto space-y-12">
+        <div data-aos="zoom-in"  className="max-w-3xl px-6 py-16 mx-auto space-y-12">
           <article className="space-y-8 dark:bg-gray-100 dark:text-gray-900">
             <div className="space-y-6">
               <h1 className="text-3xl text-black font-bold md:tracking-tight md:text-4xl">
@@ -39,10 +39,10 @@ const Details = () => {
               </h1>
               <div className="flex flex-col lg:flex-row gap-5">
                 <figure>
-                  <img src={image_url} alt="" />
+                  <img data-aos="fade-up"  src={image_url} alt="" />
                   <h2 className="text-xl mt-3">{segment_name}</h2>
                 </figure>
-                <div>
+                <div data-aos="fade-left" >
                   <h2 className="text-lg mb-2 text-black">Price: {price}</h2>
                   <h2 className="text-lg mb-2 text-black">
                     Location: {location}
@@ -73,7 +73,7 @@ const Details = () => {
         </div>
        </div>
 
-        <div className="w-full lg:w-[200px] p-4">
+        <div data-aos="fade-left" className="w-full lg:w-[200px] p-4">
           <RightSidebar></RightSidebar>
         </div>
       </div>
